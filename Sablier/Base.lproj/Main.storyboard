@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="tSf-US-u7e">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Sablier" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="0Ar-xe-xen">
+                                <rect key="frame" x="38" y="562" width="300" height="36"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nie-ni-c3U">
+                                        <rect key="frame" x="0.0" y="0.0" width="93.5" height="36"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <state key="normal" title="▶︎"/>
+                                        <connections>
+                                            <action selector="startCountDown:" destination="BYZ-38-t0r" eventType="touchUpInside" id="uNb-dJ-4aC"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Afh-TA-AZt">
+                                        <rect key="frame" x="103.5" y="0.0" width="93" height="36"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                        <state key="normal" title="||"/>
+                                        <connections>
+                                            <action selector="pauseCountDown:" destination="BYZ-38-t0r" eventType="touchUpInside" id="j5v-Yr-BiS"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KYP-94-hzz">
+                                        <rect key="frame" x="206.5" y="0.0" width="93.5" height="36"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <state key="normal" title="◼︎"/>
+                                        <connections>
+                                            <action selector="stopCountDown:" destination="BYZ-38-t0r" eventType="touchUpInside" id="TVK-9Y-KUU"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="Afh-TA-AZt" firstAttribute="width" secondItem="KYP-94-hzz" secondAttribute="width" id="qSw-oN-SNx"/>
+                                    <constraint firstItem="nie-ni-c3U" firstAttribute="width" secondItem="Afh-TA-AZt" secondAttribute="width" id="rmR-8e-ndW"/>
+                                </constraints>
+                            </stackView>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="E6X-0f-rRP">
+                                <rect key="frame" x="35.5" y="507" width="304" height="31"/>
+                                <color key="minimumTrackTintColor" red="0.90000000000000002" green="0.089999999999999983" blue="0.1034999999999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="maximumTrackTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="thumbTintColor" red="1" green="0.75198102678571432" blue="0.75611467633928564" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="sliderValueChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="af6-FJ-QNG"/>
+                                </connections>
+                            </slider>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="sC7-9d-WSp">
+                                <rect key="frame" x="85.5" y="84" width="204.5" height="22.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Countdown : " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9EI-DY-X1E">
+                                        <rect key="frame" x="0.0" y="0.0" width="104" height="22.5"/>
+                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CountDown" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Iu-aq-SsG">
+                                        <rect key="frame" x="114" y="0.0" width="90.5" height="22.5"/>
+                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="000.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PWh-eq-RGq">
+                                <rect key="frame" x="86" y="295" width="204" height="78"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="60"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.15076505829015541" green="0.15076505829015541" blue="0.15076505829015541" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="E6X-0f-rRP" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="CsE-0f-U4t"/>
+                            <constraint firstItem="0Ar-xe-xen" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Gas-uR-Suh"/>
+                            <constraint firstItem="0Ar-xe-xen" firstAttribute="top" secondItem="E6X-0f-rRP" secondAttribute="bottom" constant="25" id="Lc0-jb-44x"/>
+                            <constraint firstItem="E6X-0f-rRP" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.8" id="V4i-Mv-v9N"/>
+                            <constraint firstItem="PWh-eq-RGq" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="aZ2-04-Fyu"/>
+                            <constraint firstItem="0Ar-xe-xen" firstAttribute="width" secondItem="E6X-0f-rRP" secondAttribute="width" id="bqg-f2-aAu"/>
+                            <constraint firstItem="sC7-9d-WSp" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="cV2-Ph-DxK"/>
+                            <constraint firstItem="sC7-9d-WSp" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="nfG-mp-yDB"/>
+                            <constraint firstItem="PWh-eq-RGq" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="ri8-On-kbo"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="0Ar-xe-xen" secondAttribute="bottom" constant="25" id="v8o-zi-F90"/>
+                        </constraints>
+                    </view>
+                    <toolbarItems>
+                        <barButtonItem systemItem="play" id="gPZ-MG-CUP">
+                            <connections>
+                                <action selector="playTapped:" destination="BYZ-38-t0r" id="Z6I-A4-V2J"/>
+                            </connections>
+                        </barButtonItem>
+                    </toolbarItems>
+                    <navigationItem key="navigationItem" id="3KB-dd-yEe"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="countDownlabel" destination="3Iu-aq-SsG" id="m3A-ef-jqu"/>
+                        <outlet property="countdownSlider" destination="E6X-0f-rRP" id="bFP-8R-Dfh"/>
+                        <outlet property="currentCountDownLabel" destination="PWh-eq-RGq" id="ynK-iQ-smt"/>
+                        <outlet property="pauseButton" destination="Afh-TA-AZt" id="tza-Jn-iHF"/>
+                        <outlet property="playBarButtonItem" destination="gPZ-MG-CUP" id="BRL-eI-FYH"/>
+                        <outlet property="startButton" destination="nie-ni-c3U" id="keC-TL-mwX"/>
+                        <outlet property="stopButton" destination="KYP-94-hzz" id="2Wq-oV-24e"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1056.8" y="123.68815592203899"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="HkU-HH-tRH">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="tSf-US-u7e" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="aAG-fB-Gm8">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="cWa-27-YZf"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4vG-uD-WkL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="117.59999999999999" y="123.68815592203899"/>
+        </scene>
+    </scenes>
+</document>
